@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		333038AC8D3A91C7922E5934 /* Pods_UnsplashPhotos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4F014BE8AECAAC325F7B8F7 /* Pods_UnsplashPhotos.framework */; };
+		ED325AF620ADC5CF00FF85E3 /* UnsplashApiConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED325AF520ADC5CF00FF85E3 /* UnsplashApiConfiguration.swift */; };
 		ED8BD87E20ACCB45002AE118 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BD87D20ACCB45002AE118 /* AppDelegate.swift */; };
 		ED8BD88020ACCB45002AE118 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BD87F20ACCB45002AE118 /* ViewController.swift */; };
 		ED8BD88320ACCB45002AE118 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED8BD88120ACCB45002AE118 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 		32711E8A28206B575A9D444E /* Pods-UnsplashPhotos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnsplashPhotos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnsplashPhotos/Pods-UnsplashPhotos.debug.xcconfig"; sourceTree = "<group>"; };
 		D5FDADA87001EBBC6C2F61C8 /* Pods-UnsplashPhotos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnsplashPhotos.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnsplashPhotos/Pods-UnsplashPhotos.release.xcconfig"; sourceTree = "<group>"; };
 		E4F014BE8AECAAC325F7B8F7 /* Pods_UnsplashPhotos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnsplashPhotos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED325AF520ADC5CF00FF85E3 /* UnsplashApiConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashApiConfiguration.swift; sourceTree = "<group>"; };
 		ED8BD87A20ACCB45002AE118 /* UnsplashPhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnsplashPhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED8BD87D20ACCB45002AE118 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED8BD87F20ACCB45002AE118 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		ED325AF220ADC57700FF85E3 /* UnsplashApiClient */ = {
+			isa = PBXGroup;
+			children = (
+				ED325AF520ADC5CF00FF85E3 /* UnsplashApiConfiguration.swift */,
+			);
+			path = UnsplashApiClient;
+			sourceTree = "<group>";
+		};
 		ED8BD87120ACCB45002AE118 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +111,7 @@
 		ED8BD87C20ACCB45002AE118 /* UnsplashPhotos */ = {
 			isa = PBXGroup;
 			children = (
+				ED325AF220ADC57700FF85E3 /* UnsplashApiClient */,
 				ED8BD87D20ACCB45002AE118 /* AppDelegate.swift */,
 				ED8BD87F20ACCB45002AE118 /* ViewController.swift */,
 				ED8BD88120ACCB45002AE118 /* Main.storyboard */,
@@ -262,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED325AF620ADC5CF00FF85E3 /* UnsplashApiConfiguration.swift in Sources */,
 				ED8BD88020ACCB45002AE118 /* ViewController.swift in Sources */,
 				ED8BD87E20ACCB45002AE118 /* AppDelegate.swift in Sources */,
 			);
@@ -356,7 +368,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -410,7 +422,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
