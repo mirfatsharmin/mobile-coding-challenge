@@ -9,16 +9,16 @@
 import Foundation
 import Alamofire
 
-struct UnsplashAPIClient {
+fileprivate enum Constants {
+    static let itemsPerPage = 10
+}
+
+struct UnsplashApiClient<Element:Codable> {
     
-    enum Constants {
-        static let itemsPerPage = 10
-    }
-    
-    var currentPage: Int = 0
+    private var currentPage: Int = 0
     
     @discardableResult
-    private func performRequest<Element:Decodable>(route:URLRequestConvertible, completion:@escaping (Array<Element>)->Void) -> DataRequest {
+    private func performRequest(route:URLRequestConvertible, completion:@escaping (Array<Element>)->Void) -> DataRequest {
         return Alamofire.request(route)
             .responseJSON(completionHandler: { (response) in
                 guard response.result.isSuccess,
@@ -37,13 +37,13 @@ struct UnsplashAPIClient {
             })
     }
     
-    mutating func requestCuratedPhotos<Element:Codable>(itemsPerPage:Int = Constants.itemsPerPage, completion:@escaping (Array<Element>)->Void) {
+    mutating func requestCuratedPhotos(itemsPerPage:Int = Constants.itemsPerPage, completion:@escaping (Array<Element>)->Void) {
         currentPage = currentPage + 1
         
         requestCuratedPhotos(for: currentPage, itemsPerPage: itemsPerPage, completion: completion)
     }
     
-    private func requestCuratedPhotos<Element:Codable>(for page:Int, itemsPerPage:Int, completion:@escaping (Array<Element>)->Void) {
+    private func requestCuratedPhotos(for page:Int, itemsPerPage:Int, completion:@escaping (Array<Element>)->Void) {
         performRequest(route: UnsplashApiConfiguration.curatedPhotoList(page: page, itemsPerPage: itemsPerPage), completion: completion)
     }
 }
