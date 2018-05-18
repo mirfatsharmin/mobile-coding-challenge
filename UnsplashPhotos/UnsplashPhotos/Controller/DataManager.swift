@@ -12,7 +12,7 @@ import Foundation
 class DataManager{
     
     static let sharedDataManager = DataManager()
-    private var photosUniqueDictionaryById = [String: Photo]()
+    var photoList: [Photo] = [Photo]()
     
     
     // MARK: Fetch Data from API
@@ -32,13 +32,10 @@ class DataManager{
 
 // MARK: Save Photos in DataManager
 extension DataManager {
-    var photoList: [Photo] {
-        return Array(photosUniqueDictionaryById.values)
-    }
-    
+   
     private func savePhotos(photos: [Photo]) {
         for photo in photos {
-            photosUniqueDictionaryById[photo.id] = photo
+            photoList.append(photo)
         }
     }
 }
