@@ -13,6 +13,11 @@
 		ED325B0220ADCF3200FF85E3 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED325B0020ADCF3200FF85E3 /* Photo.swift */; };
 		ED325B0420ADE1E100FF85E3 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED325B0320ADE1E100FF85E3 /* Publisher.swift */; };
 		ED325B0720ADEAC000FF85E3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED325B0620ADEAC000FF85E3 /* DataManager.swift */; };
+		ED6F2D9D20AEA47600887DB0 /* PhotoGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F2D9620AEA47500887DB0 /* PhotoGridViewModel.swift */; };
+		ED6F2D9F20AEA47600887DB0 /* PhotoGridCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F2D9820AEA47500887DB0 /* PhotoGridCellViewModel.swift */; };
+		ED6F2DA020AEA47600887DB0 /* GridFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F2D9A20AEA47600887DB0 /* GridFlowLayout.swift */; };
+		ED6F2DA120AEA47600887DB0 /* PhotoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F2D9C20AEA47600887DB0 /* PhotoGridViewController.swift */; };
+		ED6F2DA420AEA4D900887DB0 /* PhotoGridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F2DA320AEA4D900887DB0 /* PhotoGridViewCell.swift */; };
 		ED8BD87E20ACCB45002AE118 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BD87D20ACCB45002AE118 /* AppDelegate.swift */; };
 		ED8BD88320ACCB45002AE118 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED8BD88120ACCB45002AE118 /* Main.storyboard */; };
 		ED8BD88520ACCB47002AE118 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED8BD88420ACCB47002AE118 /* Assets.xcassets */; };
@@ -39,6 +44,11 @@
 		ED325B0020ADCF3200FF85E3 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		ED325B0320ADE1E100FF85E3 /* Publisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		ED325B0620ADEAC000FF85E3 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		ED6F2D9620AEA47500887DB0 /* PhotoGridViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGridViewModel.swift; sourceTree = "<group>"; };
+		ED6F2D9820AEA47500887DB0 /* PhotoGridCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGridCellViewModel.swift; sourceTree = "<group>"; };
+		ED6F2D9A20AEA47600887DB0 /* GridFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridFlowLayout.swift; sourceTree = "<group>"; };
+		ED6F2D9C20AEA47600887DB0 /* PhotoGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGridViewController.swift; sourceTree = "<group>"; };
+		ED6F2DA320AEA4D900887DB0 /* PhotoGridViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGridViewCell.swift; sourceTree = "<group>"; };
 		ED8BD87A20ACCB45002AE118 /* UnsplashPhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnsplashPhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED8BD87D20ACCB45002AE118 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED8BD88220ACCB45002AE118 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,6 +122,39 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		ED6F2D9520AEA47500887DB0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ED6F2D9620AEA47500887DB0 /* PhotoGridViewModel.swift */,
+				ED6F2D9820AEA47500887DB0 /* PhotoGridCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ED6F2D9920AEA47600887DB0 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				ED6F2D9A20AEA47600887DB0 /* GridFlowLayout.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		ED6F2D9B20AEA47600887DB0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ED6F2D9C20AEA47600887DB0 /* PhotoGridViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		ED6F2DA220AEA4D900887DB0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ED6F2DA320AEA4D900887DB0 /* PhotoGridViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		ED8BD87120ACCB45002AE118 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +178,10 @@
 		ED8BD87C20ACCB45002AE118 /* UnsplashPhotos */ = {
 			isa = PBXGroup;
 			children = (
+				ED6F2DA220AEA4D900887DB0 /* View */,
+				ED6F2D9920AEA47600887DB0 /* Layout */,
+				ED6F2D9B20AEA47600887DB0 /* ViewController */,
+				ED6F2D9520AEA47500887DB0 /* ViewModel */,
 				ED325B0520ADEAA500FF85E3 /* Controller */,
 				ED325AFE20ADCF3200FF85E3 /* Model */,
 				ED325AF220ADC57700FF85E3 /* UnsplashApiClient */,
@@ -300,10 +347,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED6F2DA120AEA47600887DB0 /* PhotoGridViewController.swift in Sources */,
+				ED6F2DA420AEA4D900887DB0 /* PhotoGridViewCell.swift in Sources */,
 				ED325B0420ADE1E100FF85E3 /* Publisher.swift in Sources */,
+				ED6F2D9F20AEA47600887DB0 /* PhotoGridCellViewModel.swift in Sources */,
 				ED325B0220ADCF3200FF85E3 /* Photo.swift in Sources */,
 				ED325AF620ADC5CF00FF85E3 /* UnsplashApiConfiguration.swift in Sources */,
 				ED325B0720ADEAC000FF85E3 /* DataManager.swift in Sources */,
+				ED6F2D9D20AEA47600887DB0 /* PhotoGridViewModel.swift in Sources */,
+				ED6F2DA020AEA47600887DB0 /* GridFlowLayout.swift in Sources */,
 				ED325AFD20ADCEFC00FF85E3 /* UnsplashApiClient.swift in Sources */,
 				ED8BD87E20ACCB45002AE118 /* AppDelegate.swift in Sources */,
 			);
