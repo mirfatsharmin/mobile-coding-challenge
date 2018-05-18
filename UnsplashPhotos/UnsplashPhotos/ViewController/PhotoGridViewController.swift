@@ -20,12 +20,14 @@ class PhotoGridViewController: UICollectionViewController {
         return PhotoGridViewModel()
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         initLayout()
         initViewModel()
         viewModel.fetchPhotosIfNeeded(for: 0)
+        
+        fetchDataWhenApplicationEnterForeground()
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,6 +45,10 @@ class PhotoGridViewController: UICollectionViewController {
             strongSelf.collectionView?.collectionViewLayout.invalidateLayout()
             strongSelf.collectionView?.reloadData()
             }, completion: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
 }
@@ -121,5 +127,17 @@ extension PhotoGridViewController: CollectionViewScroll {
         collectionView?.layoutIfNeeded()
         collectionView?.reloadData()
         collectionView?.scrollToItem(at: indexPath, at: .bottom, animated: false)
+    }
+}
+
+//MARK: Handing data fetching when app comes from background
+extension PhotoGridViewController {
+    fileprivate func fetchDataWhenApplicationEnterForeground() {
+        NotificationCenter.default.addObserver(forName: .UIApplicationWillEnterForeground, object: nil, queue: .main) { [weak self] notification in
+            guard let strongSelf = self else {
+                return
+            }
+            strongSelf.viewModel.fetchPhotosIfNeeded(for: 0)
+        }
     }
 }
