@@ -18,6 +18,9 @@
 		ED6F2DA020AEA47600887DB0 /* GridFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F2D9A20AEA47600887DB0 /* GridFlowLayout.swift */; };
 		ED6F2DA120AEA47600887DB0 /* PhotoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F2D9C20AEA47600887DB0 /* PhotoGridViewController.swift */; };
 		ED6F2DA420AEA4D900887DB0 /* PhotoGridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F2DA320AEA4D900887DB0 /* PhotoGridViewCell.swift */; };
+		ED6F2DB720AF8CEC00887DB0 /* PhotoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F2DB520AF8CEB00887DB0 /* PhotoDetailViewModel.swift */; };
+		ED6F2DB820AF8CEC00887DB0 /* PhotoDetailCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F2DB620AF8CEB00887DB0 /* PhotoDetailCellViewModel.swift */; };
+		ED6F2DBA20AF8CF800887DB0 /* PhotoDetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F2DB920AF8CF800887DB0 /* PhotoDetailCollectionViewController.swift */; };
 		ED8BD87E20ACCB45002AE118 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8BD87D20ACCB45002AE118 /* AppDelegate.swift */; };
 		ED8BD88320ACCB45002AE118 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED8BD88120ACCB45002AE118 /* Main.storyboard */; };
 		ED8BD88520ACCB47002AE118 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED8BD88420ACCB47002AE118 /* Assets.xcassets */; };
@@ -49,6 +52,9 @@
 		ED6F2D9A20AEA47600887DB0 /* GridFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridFlowLayout.swift; sourceTree = "<group>"; };
 		ED6F2D9C20AEA47600887DB0 /* PhotoGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGridViewController.swift; sourceTree = "<group>"; };
 		ED6F2DA320AEA4D900887DB0 /* PhotoGridViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGridViewCell.swift; sourceTree = "<group>"; };
+		ED6F2DB520AF8CEB00887DB0 /* PhotoDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewModel.swift; sourceTree = "<group>"; };
+		ED6F2DB620AF8CEB00887DB0 /* PhotoDetailCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailCellViewModel.swift; sourceTree = "<group>"; };
+		ED6F2DB920AF8CF800887DB0 /* PhotoDetailCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailCollectionViewController.swift; sourceTree = "<group>"; };
 		ED8BD87A20ACCB45002AE118 /* UnsplashPhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnsplashPhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED8BD87D20ACCB45002AE118 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED8BD88220ACCB45002AE118 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -127,6 +133,8 @@
 			children = (
 				ED6F2D9620AEA47500887DB0 /* PhotoGridViewModel.swift */,
 				ED6F2D9820AEA47500887DB0 /* PhotoGridCellViewModel.swift */,
+				ED6F2DB620AF8CEB00887DB0 /* PhotoDetailCellViewModel.swift */,
+				ED6F2DB520AF8CEB00887DB0 /* PhotoDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -143,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				ED6F2D9C20AEA47600887DB0 /* PhotoGridViewController.swift */,
+				ED6F2DB920AF8CF800887DB0 /* PhotoDetailCollectionViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -351,12 +360,15 @@
 				ED6F2DA420AEA4D900887DB0 /* PhotoGridViewCell.swift in Sources */,
 				ED325B0420ADE1E100FF85E3 /* Publisher.swift in Sources */,
 				ED6F2D9F20AEA47600887DB0 /* PhotoGridCellViewModel.swift in Sources */,
+				ED6F2DBA20AF8CF800887DB0 /* PhotoDetailCollectionViewController.swift in Sources */,
 				ED325B0220ADCF3200FF85E3 /* Photo.swift in Sources */,
 				ED325AF620ADC5CF00FF85E3 /* UnsplashApiConfiguration.swift in Sources */,
+				ED6F2DB720AF8CEC00887DB0 /* PhotoDetailViewModel.swift in Sources */,
 				ED325B0720ADEAC000FF85E3 /* DataManager.swift in Sources */,
 				ED6F2D9D20AEA47600887DB0 /* PhotoGridViewModel.swift in Sources */,
 				ED6F2DA020AEA47600887DB0 /* GridFlowLayout.swift in Sources */,
 				ED325AFD20ADCEFC00FF85E3 /* UnsplashApiClient.swift in Sources */,
+				ED6F2DB820AF8CEC00887DB0 /* PhotoDetailCellViewModel.swift in Sources */,
 				ED8BD87E20ACCB45002AE118 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

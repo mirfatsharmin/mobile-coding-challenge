@@ -11,7 +11,7 @@ import UIKit
 private let reuseIdentifier = "PhotoGridCell"
 
 protocol CollectionViewScroll: class {
-    func collectionViewWillMove(at index:Int)
+    func collectionViewWillMove(at indexPath:IndexPath?)
 }
 
 class PhotoGridViewController: UICollectionViewController {
@@ -36,7 +36,12 @@ class PhotoGridViewController: UICollectionViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: { [weak self] context in
-            self?.collectionView?.collectionViewLayout.invalidateLayout()
+            guard let strongSelf = self else {
+                return
+            }
+            
+            strongSelf.collectionView?.collectionViewLayout.invalidateLayout()
+            strongSelf.collectionView?.reloadData()
             }, completion: nil)
     }
     
@@ -53,8 +58,11 @@ extension PhotoGridViewController {
     private  func initViewModel() {
         // Naive binding
         viewModel.reloadViewClosure = { [weak self] (success, error) in
+            guard let strongSelf = self else {
+                return
+            }
             DispatchQueue.main.async {
-                self?.collectionView?.reloadData()
+                strongSelf.collectionView?.reloadData()
             }
         }
     }
@@ -82,6 +90,15 @@ extension PhotoGridViewController{
         viewModel.fetchPhotosIfNeeded(for: indexPath.row)
         return cell
     }
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let viewController:PhotoDetailCollectionViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailCollectionViewController") as! PhotoDetailCollectionViewController
+        viewController.selectedIndexPath = indexPath
+        viewController.collectionViewScrollToIndexDelegate = self
+        navigationController?.present(viewController, animated: true, completion: {
+            
+        })
+        
+    }
 }
 
 //MARK: Layout Delegate
@@ -97,9 +114,12 @@ extension PhotoGridViewController : GridLayoutDelegate {
 //MARK: CollectionViewScroll Delegate
 extension PhotoGridViewController: CollectionViewScroll {
     
-    func collectionViewWillMove(at index: Int) {
-        let indexPath = IndexPath(row: index, section: 0)
+    func collectionViewWillMove(at indexPath: IndexPath?) {
+        guard let indexPath = indexPath else {
+            return
+        }
         collectionView?.layoutIfNeeded()
+        collectionView?.reloadData()
         collectionView?.scrollToItem(at: indexPath, at: .bottom, animated: false)
     }
 }

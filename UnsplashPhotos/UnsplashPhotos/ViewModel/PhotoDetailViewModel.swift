@@ -1,34 +1,34 @@
 //
-//  PhotoCollectionViewModel.swift
+//  PhotoDetailViewModel.swift
 //  UnsplashPhotos
 //
-//  Created by Mirfat on 17/5/18.
+//  Created by Mirfat on 18/5/18.
 //  Copyright © 2018 TradeRev. All rights reserved.
 //
 
 import Foundation
 
-typealias ReloadGridViewClosure = (_ success: Bool, _ error: NSError?) -> Void
+typealias ReloadDetailViewClosure = (_ success: Bool, _ error: NSError?) -> Void
 
-class PhotoGridViewModel {
+class PhotoDetailViewModel {
     
-    var reloadViewClosure: ReloadGridViewClosure?
+    var reloadViewClosure: ReloadDetailViewClosure?
     
     var numberOfCells: Int {
         return DataManager.sharedDataManager.photoList.count
     }
     
-    func createCellViewModel( photo: Photo ) -> PhotoGridCellViewModel? {
-        return PhotoGridCellViewModel(photo: photo)
+    func createCellViewModel( photo: Photo ) -> PhotoDetailCellViewModel? {
+        return PhotoDetailCellViewModel(photo: photo)
     }
     
-    func getCellViewModel( at index: Int ) -> PhotoGridCellViewModel? {
+    func getCellViewModel( at index: Int ) -> PhotoDetailCellViewModel? {
         return createCellViewModel(photo: DataManager.sharedDataManager.photoList[index])
     }
 }
 
 //MARK: FetchPhotos from network at initial stage or before last few cells
-extension PhotoGridViewModel {
+extension PhotoDetailViewModel {
     func fetchPhotosIfNeeded(for index:Int) {
         guard numberOfCells == 0 || index == numberOfCells - 1 else {
             return
